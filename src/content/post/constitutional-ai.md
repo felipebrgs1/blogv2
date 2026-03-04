@@ -5,7 +5,6 @@ date: 2026-02-10
 author: "Felipe Borges"
 category: "Research"
 tags: ["AI Safety", "Alignment"]
-readingTime: "8 min read"
 coverImage: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1600&auto=format&fit=crop"
 ---
 

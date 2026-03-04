@@ -5,7 +5,6 @@ date: 2026-02-18
 author: "Felipe Borges"
 category: "Systems"
 tags: ["Astro", "Cloudflare", "Jamstack"]
-readingTime: "6 min read"
 coverImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1600&auto=format&fit=crop"
 ---
 

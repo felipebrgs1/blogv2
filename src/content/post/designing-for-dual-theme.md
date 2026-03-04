@@ -5,7 +5,6 @@ date: 2026-03-01
 author: "Felipe Borges"
 category: "Design"
 tags: ["UI", "Dark Mode"]
-readingTime: "5 min read"
 coverImage: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1600&auto=format&fit=crop"
 ---
 

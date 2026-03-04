@@ -1,43 +1,83 @@
-# Astro Starter Kit: Minimal
+# Astro Blog (The Lab)
 
-```sh
-bun create astro@latest -- --template minimal
+Quick README to maintain this project.
+
+## Run locally
+
+```bash
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Production build:
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm run build
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Output is generated in `dist/` (ready for Cloudflare Pages).
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Where to update LinkedIn and GitHub
 
-Any static assets, like images, can be placed in the `public/` directory.
+Edit:
 
-## 🧞 Commands
+- `src/config/site.ts`
 
-All commands are run from the root of the project, from a terminal:
+Example:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
+```ts
+export const siteConfig = {
+	name: "The Lab",
+	social: {
+		github: "https://github.com/your-user",
+		linkedin: "https://www.linkedin.com/in/your-user/",
+	},
+} as const;
+```
 
-## 👀 Want to learn more?
+## Where to update Category and Tags (typed)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Edit:
+
+- `src/config/post-taxonomy.ts`
+
+This file defines the allowed options for:
+
+- `category`
+- `tags`
+
+The schema that validates this is in:
+
+- `src/content.config.ts`
+
+If you use a category/tag outside the list, build will fail.
+
+## How to create a post
+
+Create a `.md` file in:
+
+- `src/content/post/`
+
+Example `src/content/post/my-first-post.md`:
+
+```md
+---
+title: "My first post"
+description: "Short post summary."
+date: 2026-03-04
+author: "Your Name"
+category: "Research"
+tags: ["AI Safety", "Astro"]
+draft: false
+coverImage: "https://images.unsplash.com/..."
+---
+
+Post content in Markdown.
+```
+
+## Notes
+
+- `readingTime` is automatic, based on word count.
+- Home page: `/`
+- Posts list: `/post`
+- Single post: `/post/[slug]`
