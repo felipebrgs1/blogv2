@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Lora:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#49646e",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#171a1b",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Lora", "serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .serif-title { font-family: 'Lora', serif; }
+        .code-font { font-family: 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', monospace; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header / TopAppBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</header>
+<!-- Main Content Container -->
+<main class="flex-1 w-full max-w-3xl mx-auto px-6 py-12 md:py-20">
+<!-- Article Header -->
+<header class="mb-12">
+<div class="flex items-center gap-2 mb-6 text-primary font-medium tracking-wide uppercase text-xs">
+<span>Research</span>
+<span class="size-1 bg-slate-400 dark:bg-slate-600 rounded-full"></span>
+<span>AI Safety</span>
+</div>
+<h1 class="serif-title text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-slate-900 dark:text-slate-50">
+                    The Future of Constitutional AI: Aligning Models through Principles
+                </h1>
+<div class="flex items-center gap-4 text-slate-500 dark:text-slate-400 text-sm">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden">
+<img alt="Author" class="size-full object-cover" data-alt="Abstract minimalist profile avatar icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5JxKTi3f45AL5pMutdrzo6BGjyIvV4yhG9JezNSu2eSDZDD5QKcb0tErJ0lFaufdPkxen5hmtPNO4Uhz-2MIgm3z5PE2ZHsiqpmtesQ7FQ1qVY4PaPqIfxhDRg_nocIe4UCtxw0D8flOc134NSKttPmRq_cXekq4ZAmbk5-weO4Ifex-aXwUjqCzMeRJfKzMg6TSrwRmSLt0me_uCp6wwX0y2BecrqxlUrbE5IoVs72mi_wDbWAdnbVJ6Jsq8VK_LYNiwmoW5UioE"/>
+</div>
+<span class="font-medium text-slate-700 dark:text-slate-300">Anthropic Research</span>
+</div>
+<span>•</span>
+<time datetime="2023-10-24">Oct 24, 2023</time>
+<span>•</span>
+<span>12 min read</span>
+</div>
+</header>
+<!-- Featured Image -->
+<div class="mb-12 rounded-xl overflow-hidden aspect-video bg-slate-200 dark:bg-slate-800 border border-slate-200 dark:border-slate-800">
+<div class="w-full h-full bg-gradient-to-br from-primary/30 via-background-dark to-slate-900 flex items-center justify-center" data-alt="Deep blue-grey abstract geometric network pattern">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-600 scale-[3]">hub</span>
+</div>
+</div>
+<!-- Content Body -->
+<article class="prose prose-slate dark:prose-invert max-w-none text-lg leading-relaxed space-y-8">
+<p class="text-xl leading-relaxed text-slate-700 dark:text-slate-300">
+                    At its core, Constitutional AI is a method for training AI systems to be helpful, harmless, and honest through a set of guided principles. Unlike traditional reinforcement learning from human feedback (RLHF), this approach uses a written 'constitution' to oversee model behavior.
+                </p>
+<p>
+                    The motivation behind this research is to reduce the need for human labeling at scale, while increasing the transparency and steerability of large language models. By providing a clear set of rules, we allow the model to critique its own responses and refine them according to the specified constraints.
+                </p>
+<h2 class="serif-title text-2xl font-bold text-slate-900 dark:text-slate-100 pt-4">Implementation Architecture</h2>
+<p>
+                    The process consists of two primary stages: supervised learning and reinforcement learning. During the supervised phase, the model generates initial responses which are then revised based on the constitutional principles.
+                </p>
+<!-- Code Block Component -->
+<div class="my-8 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#1e2224]">
+<div class="flex items-center justify-between px-4 py-2 bg-slate-100 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+<span class="text-xs font-medium text-slate-500 uppercase tracking-wider">alignment.py</span>
+<button class="flex items-center gap-1.5 text-xs font-medium text-primary hover:text-primary/80 transition-colors">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+                            Copy Code
+                        </button>
+</div>
+<div class="p-6 overflow-x-auto">
+<pre class="code-font text-sm leading-6 text-slate-700 dark:text-slate-300"><code><span class="text-purple-600 dark:text-purple-400">def</span> <span class="text-blue-600 dark:text-blue-400">constitutional_align</span>(model, principles):
+    <span class="text-slate-400 italic"># Apply ethical constraints to the base model</span>
+    aligned_model = model.supervise(
+        principles=principles,
+        feedback_loop=<span class="text-orange-600 dark:text-orange-400">True</span>
+    )
+    <span class="text-purple-600 dark:text-purple-400">return</span> aligned_model
+
+<span class="text-slate-400 italic"># Example usage</span>
+rules = [<span class="text-green-600 dark:text-green-400">"Be helpful"</span>, <span class="text-green-600 dark:text-green-400">"Avoid bias"</span>]
+new_agent = constitutional_align(base_llama, rules)</code></pre>
+</div>
+</div>
+<p>
+                    By automating this feedback loop, we create a scalable system that can be audited by humans. Instead of checking every single output, researchers can inspect the "Constitution" itself to understand why a model behaves in a certain way.
+                </p>
+<blockquote class="border-l-4 border-primary pl-6 py-2 italic text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/20 rounded-r-lg">
+                    "The goal is not to eliminate human values, but to formalize them into a language that AI systems can understand and apply consistently."
+                </blockquote>
+<h3 class="serif-title text-xl font-bold text-slate-900 dark:text-slate-100 mt-10">Key Principles</h3>
+<ul class="space-y-4 list-none p-0">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span><strong>Self-Critique:</strong> The model evaluates its own performance against the constitution.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span><strong>Iterative Refinement:</strong> Continuous loops of feedback improve safety scores over time.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span><strong>Transparency:</strong> Principles are human-readable and easily modifiable.</span>
+</li>
+</ul>
+</article>
+<!-- Footer Section -->
+<footer class="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full font-semibold transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">thumb_up</span>
+                            Applaud
+                        </button>
+<button class="border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 px-6 py-2.5 rounded-full font-semibold transition-colors">
+                            Save for later
+                        </button>
+</div>
+<div class="flex items-center gap-6">
+<a class="text-slate-500 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">brand_family</span></a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+</footer>
+</main>
+<!-- Minimal Navigation Footer -->
+<nav class="w-full bg-slate-50 dark:bg-slate-900/50 py-12 px-6">
+<div class="max-w-3xl mx-auto flex flex-col items-center text-center">
+<div class="size-12 rounded-xl bg-primary flex items-center justify-center text-white mb-6">
+<span class="material-symbols-outlined scale-125">auto_awesome</span>
+</div>
+<h3 class="serif-title text-2xl font-bold mb-2">Subscribe to our Research</h3>
+<p class="text-slate-500 dark:text-slate-400 mb-8 max-w-sm">Get the latest insights on AI safety and alignment directly in your inbox.</p>
+<div class="flex w-full max-w-md gap-2">
+<input class="flex-1 bg-white dark:bg-background-dark border border-slate-200 dark:border-slate-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="email@example.com" type="email"/>
+<button class="bg-primary text-white px-6 py-3 rounded-lg font-bold">Join</button>
+</div>
+</div>
+</nav>
+</div>
+</body></html>

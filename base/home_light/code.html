@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Lora:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4a86f7",
+              "background-dark": "#1a1f26",
+              "surface-dark": "#252b35",
+              "text-main": "#d1d5db",
+              "text-heading": "#f3f4f6",
+              "text-muted": "#9ca3af",
+              "border-soft": "#2d3543"
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"],
+              "serif": ["Lora", "serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            background-color: theme('colors.background-dark');
+            color: theme('colors.text-main');
+        }
+        .grainy-bg {
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDd32jUGK3OxJZe2aNXvyzeunVCrdxwfUQ2KDhIn7fTKnHo_UTYYxN4TnBXXGTBFfAtrJlHFwWJo5MOwr1nwYA3sX0s8lATkzhxm1N9xVKOyw7KXDNhlZRHpH6dtd4C37G8AaSYnqbNz2H_1OdB7e7Sup7RNh7wf7s90dWvOqXaFhJrUoDQyvvGbxM7lEn_naPdW9MYwiuPeh51tynvEWCE2u0xQFnTTd_Mby1qTjzYxJBeHH0vKw15z2LU6-2WMX3M6Xllq4R0k88T);
+            opacity: 0.15;
+            mix-blend-mode: overlay;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<nav class="sticky top-0 z-50 bg-background-dark/90 backdrop-blur-md border-b border-border-soft">
+<div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<a class="text-xl font-serif font-bold tracking-tight text-text-heading" href="#">The Lab</a>
+<div class="hidden md:flex items-center gap-6 text-sm font-medium text-text-muted">
+<a class="hover:text-primary transition-colors" href="#">Research</a>
+<a class="hover:text-primary transition-colors" href="#">Essays</a>
+<a class="hover:text-primary transition-colors" href="#">About</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="bg-primary text-white px-4 py-1.5 rounded-full text-sm font-medium hover:brightness-110 transition-all">
+                    Subscribe
+                </button>
+</div>
+</div>
+</nav>
+<main class="max-w-5xl mx-auto px-6 py-12">
+<section class="mb-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7">
+<div class="aspect-[16/10] bg-surface-dark rounded-xl overflow-hidden relative group">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent z-10"></div>
+<img alt="Abstract minimalist wave patterns" class="w-full h-full object-cover grayscale opacity-70 group-hover:scale-105 transition-transform duration-700 contrast-[0.85]" data-alt="Abstract minimalist grayscale wave patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR9v08cjUqRrOK5RmWCVTSX9Zv5GMBZGJ2rLIAoi8d3vY4TLt5QMRsg1JCJ50aE71zojvakjYH9OSLfZ_Rb73Z-Amzi7JTAsQFWsvfkoJgjQaVGzRN4DB9Sm6HOJVkLyYIr6z4bhOry0cQ7eEfTEInlt7JFo7_8AAeld9MwdM7qf35ZcmDAeLpqaoKNlhKsbv7iFg0rXGZ5uFna0f7QQfHtI21Ke93Q-bDGHbTxRDCPV6-q3ORboenDaJp7mgq7Gug7asDjG2vvJEd"/>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-6">
+<span class="text-xs font-bold tracking-widest uppercase text-primary bg-primary/10 px-2 py-0.5 rounded">Featured</span>
+<span class="text-xs text-text-muted font-medium">October 24, 2023</span>
+</div>
+<h1 class="text-4xl lg:text-5xl font-serif font-bold leading-tight mb-6 text-text-heading">
+                        Architectures of Thought: Mapping the Future of LLMs
+                    </h1>
+<p class="text-lg text-text-muted leading-relaxed mb-8">
+                        An exploration into the latent spaces of transformer models and how structural constraints influence emergent cognitive patterns in synthetic reasoning.
+                    </p>
+<div class="flex items-center gap-4">
+<a class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" href="#">
+                            Read Essay <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<hr class="border-border-soft mb-20"/>
+<section>
+<div class="flex justify-between items-end mb-12">
+<h2 class="text-3xl font-serif font-bold text-text-heading">Recent Entries</h2>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-dark rounded-full text-xs font-medium text-text-main cursor-pointer hover:bg-border-soft transition-colors border border-transparent">All</span>
+<span class="px-3 py-1 bg-transparent rounded-full text-xs font-medium text-text-muted cursor-pointer hover:bg-surface-dark transition-colors">Systems</span>
+<span class="px-3 py-1 bg-transparent rounded-full text-xs font-medium text-text-muted cursor-pointer hover:bg-surface-dark transition-colors">Cognition</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+<article class="group">
+<div class="aspect-video bg-surface-dark rounded-lg overflow-hidden mb-6">
+<img alt="Minimalist geometric shapes" class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-90 transition-opacity contrast-[0.9]" data-alt="Minimalist geometric shapes in grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9ZazDmsMCc_vXJP1DT8i1C48aTHT9BBZVlRu5ReEqh24Sm00_e49SpZqaZJp62a0btu9xFkQeAbN3J5IcwCBMNXEXIfchlwSVsydH2R_cmfFoLCLa9Y2CllHyvM27V_xqDaPl8Fk0a08xvyGtBnZqDPysemLqEGjugU_ks-Fw6TMTlL9hfL6tWngTf0_5UE5a4pv_EaaDmBpc2auzXmlWX0vDBgKzbSRM2nR8yAF3alXdIFByh-HUP2chHUaOYbzleirho18tlIKU"/>
+</div>
+<div class="flex items-center gap-4 mb-3">
+<span class="text-[10px] font-bold tracking-widest uppercase text-text-muted">Cognition</span>
+<span class="h-px w-4 bg-border-soft"></span>
+<span class="text-[10px] text-text-muted font-medium uppercase">Sep 12, 2023</span>
+</div>
+<h3 class="text-2xl font-serif font-bold mb-3 text-text-heading group-hover:text-primary transition-colors">The Recursive Loop: Meta-learning in Agentic Flows</h3>
+<p class="text-text-muted text-sm leading-relaxed">How self-correcting mechanisms are redefining the boundaries between program and intention.</p>
+</article>
+<article class="group">
+<div class="aspect-video bg-surface-dark rounded-lg overflow-hidden mb-6">
+<img alt="Digital neural network abstract" class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-90 transition-opacity contrast-[0.9]" data-alt="Abstract neural network digital visualization grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1adaKF96yJH2YQ9dKr5UCcH71ISjwDjMvfxda7o8_ALpSDCKvz0uyETaB6YtW-8AsLhEXLlbooHfBt0IV9SbBeWMNFDaDdZkYsfogDzNIPQfe0s1-KRxWej0Dl5LxftNrRb1eaHGxItPTtdw7xetF3xwfaicKzRBx_AmxMCfXpicPgf9V3X9kR3suST-rjODsVk3gBS-LAvbrj_h3W9Ta-ANWmGVGJTj3BPiADlElRICzjpaeBJ5y4kLjyakrTVryII_nYFTBPKbY"/>
+</div>
+<div class="flex items-center gap-4 mb-3">
+<span class="text-[10px] font-bold tracking-widest uppercase text-text-muted">Systems</span>
+<span class="h-px w-4 bg-border-soft"></span>
+<span class="text-[10px] text-text-muted font-medium uppercase">Aug 28, 2023</span>
+</div>
+<h3 class="text-2xl font-serif font-bold mb-3 text-text-heading group-hover:text-primary transition-colors">Substrate Independence and Neural Topography</h3>
+<p class="text-text-muted text-sm leading-relaxed">Analyzing why logical structures persist across varied hardware implementations and biological frameworks.</p>
+</article>
+<article class="group">
+<div class="aspect-video bg-surface-dark rounded-lg overflow-hidden mb-6">
+<img alt="Simple minimalist interior shadow" class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-90 transition-opacity contrast-[0.9]" data-alt="Minimalist architectural shadows on a plain wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXRSEsTlXxo0LKEoiIWhMazauam9eQu6pXTjoR-j5F_Hh5dMQTFl4Oan4ihdjolQCgp8YExikFYUA1x8hPrQj7uoW3ziRPt_kwFhY37-SMkaHKpLaD5ikiVpF3ztfql-3H4uDbzWO4Ojrsy3_lMJf8uWnuUxOAOOB7ljMx-ThYCmIaXu81zGbJI2WXi4pGnA6KORXtVXMp8YqQ81Vh6L9p8DGEOiX_qTPEPIzlf_O71zhbHqyjBxUS2qUy3MDWj27UZCTDj6lpx5py"/>
+</div>
+<div class="flex items-center gap-4 mb-3">
+<span class="text-[10px] font-bold tracking-widest uppercase text-text-muted">Design</span>
+<span class="h-px w-4 bg-border-soft"></span>
+<span class="text-[10px] text-text-muted font-medium uppercase">Aug 05, 2023</span>
+</div>
+<h3 class="text-2xl font-serif font-bold mb-3 text-text-heading group-hover:text-primary transition-colors">Ethics of the Invisible Interface</h3>
+<p class="text-text-muted text-sm leading-relaxed">When the UI disappears, where does the user's agency reside? A study on seamless AI integration.</p>
+</article>
+<article class="group">
+<div class="aspect-video bg-surface-dark rounded-lg overflow-hidden mb-6">
+<img alt="Cosmic dust abstract" class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-90 transition-opacity contrast-[0.9]" data-alt="Monochrome abstract pattern representing cosmic particles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn84kDCTlcmnGlekxPeIcmfMiObo-p4el_zZNwkctFSVbOdkKKV8fq7HXQHQ4n1tq04V7Yl_u5_d6yhIi7w7kz8fM7I2zquyPdYzihbiG7Qo301pCWAKUY51OKW0ScetFyGF3OwSsf6PLfvjCg_e2GYc3LZCEl0hV6tmctibKwdp5DSQfn1n7_aC28QZEdUhR6Q0d1327pXzD3e0eQkmUecKw9WzH13o3BpsqViGmC7KlgksXmo6t8AF95zN0_fyG-8RJfcLq2dbxX"/>
+</div>
+<div class="flex items-center gap-4 mb-3">
+<span class="text-[10px] font-bold tracking-widest uppercase text-text-muted">Cognition</span>
+<span class="h-px w-4 bg-border-soft"></span>
+<span class="text-[10px] text-text-muted font-medium uppercase">Jul 19, 2023</span>
+</div>
+<h3 class="text-2xl font-serif font-bold mb-3 text-text-heading group-hover:text-primary transition-colors">Entropy and Information Theory in LLMs</h3>
+<p class="text-text-muted text-sm leading-relaxed">Measuring the limits of novelty in purely statistical generation systems.</p>
+</article>
+</div>
+</section>
+<section class="mt-32 mb-16 bg-surface-dark rounded-2xl p-12 text-center relative overflow-hidden">
+<div class="absolute inset-0 grainy-bg"></div>
+<div class="relative z-10 max-w-xl mx-auto">
+<h2 class="text-3xl font-serif font-bold mb-4 text-text-heading">Join the discourse.</h2>
+<p class="text-text-muted mb-8 font-light italic">Bi-weekly insights into the frontier of artificial cognition, delivered with precision.</p>
+<form class="flex flex-col sm:flex-row gap-3">
+<input class="flex-1 bg-background-dark/50 border-border-soft rounded-lg px-4 py-3 text-text-main placeholder:text-text-muted focus:ring-primary/50 focus:border-primary transition-all outline-none" placeholder="Your email address" type="email"/>
+<button class="bg-primary hover:brightness-110 text-white font-semibold px-8 py-3 rounded-lg transition-all">
+                        Subscribe
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<footer class="border-t border-border-soft py-12 px-6 bg-background-dark">
+<div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-serif font-bold text-lg text-text-heading">The Lab</span>
+<span class="text-text-muted text-xs uppercase tracking-widest font-medium">© 2023 Systems Research Group</span>
+</div>
+<div class="flex gap-8 text-sm font-medium text-text-muted">
+<a class="hover:text-primary transition-colors" href="#">Twitter</a>
+<a class="hover:text-primary transition-colors" href="#">Substack</a>
+<a class="hover:text-primary transition-colors" href="#">RSS</a>
+<a class="hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+
+</body></html>
