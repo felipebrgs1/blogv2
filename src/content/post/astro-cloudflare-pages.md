@@ -5,7 +5,7 @@ date: 2026-02-18
 author: "Felipe Borges"
 category: "Systems"
 tags: ["Astro", "Cloudflare", "Jamstack"]
-coverImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1600&auto=format&fit=crop"
+coverImage: "./images/astro-cloudflare-pages.png"
 ---
 
 Astro é uma boa escolha para blog porque entrega HTML estático por padrão e deixa hidratação para os pontos realmente interativos.

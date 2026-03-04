@@ -5,7 +5,7 @@ date: 2026-03-01
 author: "Felipe Borges"
 category: "Design"
 tags: ["UI", "Dark Mode"]
-coverImage: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1600&auto=format&fit=crop"
+coverImage: "./images/designing-for-dual-theme.png"
 ---
 
 A estratégia mais limpa para dual theme é definir os mesmos componentes para ambos os modos e mudar apenas tokens de cor e contraste.

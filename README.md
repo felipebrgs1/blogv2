@@ -69,7 +69,7 @@ author: "Your Name"
 category: "Research"
 tags: ["AI Safety", "Astro"]
 draft: false
-coverImage: "https://images.unsplash.com/..."
+coverImage: "./images/my-first-post.png"
 ---
 
 Post content in Markdown.

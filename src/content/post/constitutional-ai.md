@@ -5,7 +5,7 @@ date: 2026-02-10
 author: "Felipe Borges"
 category: "Research"
 tags: ["AI Safety", "Alignment"]
-coverImage: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1600&auto=format&fit=crop"
+coverImage: "./images/constitutional-ai.png"
 ---
 
 Constitutional AI busca trocar parte do feedback humano direto por um conjunto de regras escritas. Em vez de apenas pontuar respostas, o modelo aprende a revisar sua própria saída usando esses princípios como referência.

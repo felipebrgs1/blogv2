@@ -9,7 +9,8 @@
 		"astro": "astro",
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
-		"deploy:cloudflare": "npm run build && wrangler pages deploy dist --project-name blog"
+		"deploy:cloudflare": "npm run build && wrangler pages deploy dist --project-name blog --branch main",
+		"deploy:preview": "npm run build && wrangler pages deploy dist --project-name blog --branch master"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.2.1",
