@@ -8,7 +8,8 @@
 		"preview": "astro preview",
 		"astro": "astro",
 		"format": "prettier --write .",
-		"format:check": "prettier --check ."
+		"format:check": "prettier --check .",
+		"deploy:cloudflare": "npm run build && wrangler pages deploy dist --project-name blog"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.2.1",

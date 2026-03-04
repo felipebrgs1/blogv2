@@ -3,109 +3,115 @@ import '../global.css';
 import { siteConfig } from '../config/site';
 
 interface Props {
-  title?: string;
-  description?: string;
+	title?: string;
+	description?: string;
+	noindex?: boolean;
 }
 
 const {
-  title = 'The Lab',
-  description = 'Research, essays e posts técnicos',
+	title = 'The Lab',
+	description = 'Research, essays e posts técnicos',
+	noindex = false,
 } = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, siteConfig.url).toString();
+const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow';
 ---
 
 <html lang='pt-BR'>
-  <head>
-    <meta charset='utf-8' />
-    <meta name='viewport' content='width=device-width' />
-    <meta name='generator' content={Astro.generator} />
-    <meta name='description' content={description} />
+	<head>
+		<meta charset='utf-8' />
+		<meta name='viewport' content='width=device-width' />
+		<meta name='generator' content={Astro.generator} />
+		<meta name='description' content={description} />
+		<meta name='robots' content={robotsContent} />
+		<link rel='canonical' href={canonicalUrl} />
 
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <link rel='icon' href='/favicon.ico' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<link rel='icon' href='/favicon.ico' />
 
-    <link
-      rel='preconnect'
-      href='https://fonts.googleapis.com'
-    />
-    <link
-      rel='preconnect'
-      href='https://fonts.gstatic.com'
-      crossorigin='anonymous'
-    />
-    <link
-      href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap'
-      rel='stylesheet'
-    />
+		<link
+			rel='preconnect'
+			href='https://fonts.googleapis.com'
+		/>
+		<link
+			rel='preconnect'
+			href='https://fonts.gstatic.com'
+			crossorigin='anonymous'
+		/>
+		<link
+			href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap'
+			rel='stylesheet'
+		/>
 
-    <title>{title}</title>
+		<title>{title}</title>
 
-    <script is:inline>
-      (() => {
-        const stored = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const dark = stored ? stored === 'dark' : prefersDark;
-        if (dark) document.documentElement.classList.add('dark');
-      })();
-    </script>
-  </head>
+		<script is:inline>
+			(() => {
+				const stored = localStorage.getItem('theme');
+				const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				const dark = stored ? stored === 'dark' : prefersDark;
+				if (dark) document.documentElement.classList.add('dark');
+			})();
+		</script>
+	</head>
 
-  <body class='min-h-screen bg-[rgb(251,250,248)] text-slate-900 antialiased transition-colors dark:bg-[rgb(23,26,27)] dark:text-slate-100'>
-    <div class='sticky top-0 z-50 border-b border-slate-200/60 bg-[rgb(251,250,248)]/85 backdrop-blur-md dark:border-slate-800 dark:bg-[rgb(23,26,27)]/85'>
-      <nav class='mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-6'>
-        <div class='flex items-center gap-7'>
-          <a class='font-serif text-xl font-bold tracking-tight' href='/'>{siteConfig.name}</a>
-          <div class='hidden items-center gap-5 text-sm text-slate-600 dark:text-slate-400 md:flex'>
-            <a class='transition-colors hover:text-[rgb(48,110,232)] dark:hover:text-[rgb(73,100,110)]' href='/'>Home</a>
-            <a class='transition-colors hover:text-[rgb(48,110,232)] dark:hover:text-[rgb(73,100,110)]' href='/post'>Posts</a>
-          </div>
-        </div>
+	<body class='min-h-screen bg-[rgb(251,250,248)] text-slate-900 antialiased transition-colors dark:bg-[rgb(23,26,27)] dark:text-slate-100'>
+		<div class='sticky top-0 z-50 border-b border-slate-200/60 bg-[rgb(251,250,248)]/85 backdrop-blur-md dark:border-slate-800 dark:bg-[rgb(23,26,27)]/85'>
+			<nav class='mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-6'>
+				<div class='flex items-center gap-7'>
+					<a class='font-serif text-xl font-bold tracking-tight' href='/'>{siteConfig.name}</a>
+					<div class='hidden items-center gap-5 text-sm text-slate-600 dark:text-slate-400 md:flex'>
+						<a class='transition-colors hover:text-[rgb(48,110,232)] dark:hover:text-[rgb(73,100,110)]' href='/'>Home</a>
+						<a class='transition-colors hover:text-[rgb(48,110,232)] dark:hover:text-[rgb(73,100,110)]' href='/post'>Posts</a>
+					</div>
+				</div>
 
-        <button
-          class='rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-700 transition-colors hover:border-slate-400 dark:border-slate-700 dark:text-slate-200 dark:hover:border-slate-500'
-          id='theme-toggle'
-          type='button'
-        >
-          Tema
-        </button>
-      </nav>
-    </div>
+				<button
+					class='rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-700 transition-colors hover:border-slate-400 dark:border-slate-700 dark:text-slate-200 dark:hover:border-slate-500'
+					id='theme-toggle'
+					type='button'
+				>
+					Tema
+				</button>
+			</nav>
+		</div>
 
-    <slot />
+		<slot />
 
-    <footer class='mt-16 border-t border-slate-200 bg-white/80 px-6 py-12 dark:border-slate-800 dark:bg-[rgb(19,22,23)]/80'>
-      <div class='mx-auto flex w-full max-w-5xl flex-col items-center justify-between gap-6 md:flex-row'>
-        <div class='flex flex-col items-center gap-1 md:items-start'>
-          <span class='font-serif text-lg font-bold'>{siteConfig.name}</span>
-        </div>
+		<footer class='mt-16 border-t border-slate-200 bg-white/80 px-6 py-12 dark:border-slate-800 dark:bg-[rgb(19,22,23)]/80'>
+			<div class='mx-auto flex w-full max-w-5xl flex-col items-center justify-between gap-6 md:flex-row'>
+				<div class='flex flex-col items-center gap-1 md:items-start'>
+					<span class='font-serif text-lg font-bold'>{siteConfig.name}</span>
+				</div>
 
-        <div class='flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300'>
-          <a
-            class='transition-colors hover:text-[rgb(48,110,232)] dark:hover:text-[rgb(73,100,110)]'
-            href={siteConfig.social.linkedin}
-            target='_blank'
-            rel='noreferrer'
-          >
-            LinkedIn
-          </a>
-          <a
-            class='transition-colors hover:text-[rgb(48,110,232)] dark:hover:text-[rgb(73,100,110)]'
-            href={siteConfig.social.github}
-            target='_blank'
-            rel='noreferrer'
-          >
-            GitHub
-          </a>
-        </div>
-      </div>
-    </footer>
+				<div class='flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300'>
+					<a
+						class='transition-colors hover:text-[rgb(48,110,232)] dark:hover:text-[rgb(73,100,110)]'
+						href={siteConfig.social.linkedin}
+						target='_blank'
+						rel='noreferrer'
+					>
+						LinkedIn
+					</a>
+					<a
+						class='transition-colors hover:text-[rgb(48,110,232)] dark:hover:text-[rgb(73,100,110)]'
+						href={siteConfig.social.github}
+						target='_blank'
+						rel='noreferrer'
+					>
+						GitHub
+					</a>
+				</div>
+			</div>
+		</footer>
 
-    <script is:inline>
-      const toggle = document.getElementById('theme-toggle');
-      toggle?.addEventListener('click', () => {
-        const root = document.documentElement;
-        const isDark = root.classList.toggle('dark');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      });
-    </script>
-  </body>
+		<script is:inline>
+			const toggle = document.getElementById('theme-toggle');
+			toggle?.addEventListener('click', () => {
+				const root = document.documentElement;
+				const isDark = root.classList.toggle('dark');
+				localStorage.setItem('theme', isDark ? 'dark' : 'light');
+			});
+		</script>
+	</body>
 </html>
