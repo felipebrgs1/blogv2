@@ -13,6 +13,7 @@
 		"deploy:preview": "npm run build && wrangler pages deploy dist --project-name blogv2 --branch master"
 	},
 	"dependencies": {
+		"@astrojs/cloudflare": "^12.6.12",
 		"@astrojs/mdx": "^4.3.13",
 		"@tailwindcss/vite": "^4.2.1",
 		"astro": "^5.18.0",

@@ -85,7 +85,7 @@ Post content in Markdown.
 - `readingTime` is automatic, based on word count.
 - `siteConfig.url` in `src/config/site.ts` must be your production URL (used by canonical and sitemap).
 - Cloudflare preview URLs (for example `master.<project>.pages.dev`) may return `x-robots-tag: noindex`.
-  Run Lighthouse SEO on the production URL (`https://blog.felipebrg.com.br`) instead.
+  Run Lighthouse SEO on the production URL (`https://felipebrg.com.br`) instead.
 - Home page: `/`
 - Posts list: `/post`
 - Single post: `/post/[slug]`
