@@ -1,25 +1,29 @@
 {
-	"name": "astro",
-	"type": "module",
-	"version": "0.0.1",
-	"scripts": {
-		"dev": "astro dev",
-		"build": "astro build",
-		"preview": "astro preview",
-		"astro": "astro",
-		"format": "prettier --write .",
-		"format:check": "prettier --check .",
-		"deploy:cloudflare": "npm run build && wrangler pages deploy dist --project-name blogv2 --branch main",
-		"deploy:preview": "npm run build && wrangler pages deploy dist --project-name blogv2 --branch master"
-	},
-	"dependencies": {
-		"@astrojs/mdx": "^4.3.13",
-		"@tailwindcss/vite": "^4.2.1",
-		"astro": "^5.18.0",
-		"tailwindcss": "^4.2.1"
-	},
-	"devDependencies": {
-		"prettier": "^3.8.1",
-		"prettier-plugin-astro": "^0.14.1"
-	}
+  "name": "astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "bun run build && wrangler dev",
+    "astro": "astro",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "deploy:cloudflare": "npm run build && wrangler pages deploy dist --project-name blogv2 --branch main",
+    "deploy:preview": "npm run build && wrangler pages deploy dist --project-name blogv2 --branch master",
+    "deploy": "bun run build && wrangler deploy",
+    "cf-typegen": "wrangler types"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.6.12",
+    "@astrojs/mdx": "^4.3.13",
+    "@tailwindcss/vite": "^4.2.1",
+    "astro": "^5.18.0",
+    "tailwindcss": "^4.2.1",
+    "wrangler": "^4.70.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1"
+  }
 }
