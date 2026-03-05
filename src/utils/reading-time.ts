@@ -20,10 +20,10 @@ export const countWords = (content: string): number => {
 };
 
 export const calculateReadingTime = (
-	content: string,
+	content: string | undefined | null,
 	wordsPerMinute = DEFAULT_WORDS_PER_MINUTE,
 ): string => {
-	const words = countWords(content);
+	const words = countWords(content ?? "");
 	const minutes = Math.max(1, Math.ceil(words / wordsPerMinute));
 	return `${minutes} min read`;
 };

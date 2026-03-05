@@ -1,19 +1,20 @@
-import type { APIRoute } from 'astro';
-import { getCollection } from 'astro:content';
-import { siteConfig } from '../config/site';
+import type { APIRoute } from "astro";
+import { getCollection } from "astro:content";
+import { siteConfig } from "../config/site";
+import { getPostSlug } from "../utils/post";
 
 type SitemapEntry = {
 	loc: string;
 	lastmod: string;
-	changefreq: 'daily' | 'weekly' | 'monthly';
+	changefreq: "daily" | "weekly" | "monthly";
 	priority: string;
 };
 
-const siteUrl = siteConfig.url.replace(/\/$/, '');
+const siteUrl = siteConfig.url.replace(/\/$/, "");
 
 const toAbsoluteUrl = (path: string): string => `${siteUrl}${path}`;
 
-const toDateOnly = (date: Date): string => date.toISOString().split('T')[0];
+const toDateOnly = (date: Date): string => date.toISOString().split("T")[0];
 
 const renderUrlNode = (entry: SitemapEntry): string => `
   <url>
@@ -24,7 +25,7 @@ const renderUrlNode = (entry: SitemapEntry): string => `
   </url>`;
 
 export const GET: APIRoute = async () => {
-	const posts = (await getCollection('post', ({ data }) => !data.draft)).sort(
+	const posts = (await getCollection("post", ({ data }) => !data.draft)).sort(
 		(a, b) => b.data.date.getTime() - a.data.date.getTime(),
 	);
 
@@ -33,35 +34,35 @@ export const GET: APIRoute = async () => {
 
 	const staticEntries: SitemapEntry[] = [
 		{
-			loc: toAbsoluteUrl('/'),
+			loc: toAbsoluteUrl("/"),
 			lastmod: homeLastmod,
-			changefreq: 'daily',
-			priority: '1.0',
+			changefreq: "daily",
+			priority: "1.0",
 		},
 		{
-			loc: toAbsoluteUrl('/post'),
+			loc: toAbsoluteUrl("/post"),
 			lastmod: homeLastmod,
-			changefreq: 'daily',
-			priority: '0.9',
+			changefreq: "daily",
+			priority: "0.9",
 		},
 	];
 
 	const postEntries: SitemapEntry[] = posts.map((post) => ({
-		loc: toAbsoluteUrl(`/post/${post.slug}`),
+		loc: toAbsoluteUrl(`/post/${getPostSlug(post.id)}`),
 		lastmod: toDateOnly(post.data.updatedAt ?? post.data.date),
-		changefreq: 'weekly',
-		priority: '0.8',
+		changefreq: "weekly",
+		priority: "0.8",
 	}));
 
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${[...staticEntries, ...postEntries].map(renderUrlNode).join('\n')}
+${[...staticEntries, ...postEntries].map(renderUrlNode).join("\n")}
 </urlset>
 `;
 
 	return new Response(xml, {
 		headers: {
-			'Content-Type': 'application/xml; charset=utf-8',
+			"Content-Type": "application/xml; charset=utf-8",
 		},
 	});
 };

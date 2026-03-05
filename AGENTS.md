@@ -32,6 +32,15 @@ Project guidelines for coding agents working in this repository.
 
 ## Content Rules
 
+sempre usar astro:assets para imagens
+exemplo:
+sempre no formato webp
+
+```
+import { Image } from 'astro:assets';
+<Image src={vinextBuildClient} alt="Comparativo de build e client-side entre Next.js e Vinext" />
+```
+
 - Each post must live in its own folder: `src/content/post/<slug>/`.
 - The Markdown entry file for each post is `index.md`.
 - Keep post-specific images in `src/content/post/<slug>/images/`.

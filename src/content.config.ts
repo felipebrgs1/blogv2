@@ -1,8 +1,9 @@
 import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
 import { POST_CATEGORIES, POST_TAGS } from "./config/post-taxonomy";
 
 const post = defineCollection({
-	type: "content",
+	loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/post" }),
 	schema: ({ image }) =>
 		z.object({
 			title: z.string(),
