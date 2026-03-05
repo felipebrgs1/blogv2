@@ -29,4 +29,4 @@ Limpei todas as caches (.next e dist) e rodei os builds em projetos equivalentes
 ![Comparativo de chunks server-side entre Next.js e Vinext](./images/vinext-build-server.webp)
 
 O Next.js continua extremamente sólido, principalmente se você já está dentro do ecossistema Vercel. O Vinext (lançado há poucos dias) ainda é experimental, mas entrega um footprint bem menor e mais liberdade de vendor lock-in.
-hashtag#NextJS hashtag#Vite hashtag#React hashtag#WebPerformance hashtag#Cloudflare hashtag#Vinext
+#NextJS #Vite #React #WebPerformance #Cloudflare #Vinext
