@@ -53,11 +53,43 @@ const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow';
 				</div>
 
 				<button
-					class='rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-700 transition-colors hover:border-slate-400 dark:border-slate-700 dark:text-slate-200 dark:hover:border-slate-500'
+					class='inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-700 transition-colors hover:border-slate-400 dark:border-slate-700 dark:text-slate-200 dark:hover:border-slate-500'
 					id='theme-toggle'
 					type='button'
+					aria-label='Alternar tema'
 				>
-					Tema
+					<svg
+						class='h-4 w-4 dark:hidden'
+						viewBox='0 0 24 24'
+						fill='none'
+						stroke='currentColor'
+						stroke-width='2'
+						stroke-linecap='round'
+						stroke-linejoin='round'
+						aria-hidden='true'
+					>
+						<circle cx='12' cy='12' r='4' />
+						<path d='M12 2v2' />
+						<path d='M12 20v2' />
+						<path d='m4.93 4.93 1.41 1.41' />
+						<path d='m17.66 17.66 1.41 1.41' />
+						<path d='M2 12h2' />
+						<path d='M20 12h2' />
+						<path d='m6.34 17.66-1.41 1.41' />
+						<path d='m19.07 4.93-1.41 1.41' />
+					</svg>
+					<svg
+						class='hidden h-4 w-4 dark:block'
+						viewBox='0 0 24 24'
+						fill='none'
+						stroke='currentColor'
+						stroke-width='2'
+						stroke-linecap='round'
+						stroke-linejoin='round'
+						aria-hidden='true'
+					>
+						<path d='M12 3a7 7 0 1 0 9 9 9 9 0 1 1-9-9z' />
+					</svg>
 				</button>
 			</nav>
 		</div>
