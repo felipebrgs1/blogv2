@@ -20,35 +20,79 @@ const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow';
 <html lang='pt-BR'>
 	<head>
 		<meta charset='utf-8' />
-		<meta name='viewport' content='width=device-width' />
-		<meta name='generator' content={Astro.generator} />
-		<meta name='description' content={description} />
-		<meta name='robots' content={robotsContent} />
-		<link rel='canonical' href={canonicalUrl} />
+		<meta
+			name='viewport'
+			content='width=device-width'
+		/>
+		<meta
+			name='generator'
+			content={Astro.generator}
+		/>
+		<meta
+			name='description'
+			content={description}
+		/>
+		<meta
+			name='robots'
+			content={robotsContent}
+		/>
+		<link
+			rel='canonical'
+			href={canonicalUrl}
+		/>
 
-		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-		<link rel='icon' href='/favicon.ico' />
+		<link
+			rel='icon'
+			type='image/svg+xml'
+			href='/favicon.svg'
+		/>
+		<link
+			rel='icon'
+			href='/favicon.ico'
+		/>
 
 		<title>{title}</title>
 
 		<script is:inline>
 			(() => {
 				const stored = localStorage.getItem('theme');
-				const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				const prefersDark = window.matchMedia(
+					'(prefers-color-scheme: dark)',
+				).matches;
 				const dark = stored ? stored === 'dark' : prefersDark;
 				if (dark) document.documentElement.classList.add('dark');
 			})();
 		</script>
 	</head>
 
-	<body class='min-h-screen bg-[rgb(251,250,248)] text-slate-900 antialiased transition-colors dark:bg-[rgb(23,26,27)] dark:text-slate-100'>
-		<div class='sticky top-0 z-50 border-b border-slate-200/60 bg-[rgb(251,250,248)]/85 backdrop-blur-md dark:border-slate-800 dark:bg-[rgb(23,26,27)]/85'>
-			<nav class='mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-6'>
+	<body
+		class='flex min-h-screen flex-col bg-[rgb(251,250,248)] text-slate-900 antialiased transition-colors dark:bg-[rgb(23,26,27)] dark:text-slate-100'
+	>
+		<div
+			class='sticky top-0 z-50 border-b border-slate-200/60 bg-[rgb(251,250,248)]/85 backdrop-blur-md dark:border-slate-800 dark:bg-[rgb(23,26,27)]/85'
+		>
+			<nav
+				class='mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-6'
+			>
 				<div class='flex items-center gap-7'>
-					<a class='font-serif text-xl font-bold tracking-tight' href='/'>{siteConfig.name}</a>
-					<div class='hidden items-center gap-5 text-sm text-slate-600 dark:text-slate-400 md:flex'>
-						<a class='transition-colors hover:text-[rgb(48,110,232)] dark:hover:text-[rgb(73,100,110)]' href='/'>Home</a>
-						<a class='transition-colors hover:text-[rgb(48,110,232)] dark:hover:text-[rgb(73,100,110)]' href='/post'>Posts</a>
+					<a
+						class='font-serif text-xl font-bold tracking-tight'
+						href='/'
+						>{siteConfig.name}</a
+					>
+					<div
+						class='hidden items-center gap-5 text-sm text-slate-600 dark:text-slate-400 md:flex'
+					>
+						<a
+							class='transition-colors hover:text-[rgb(48,110,232)] dark:hover:text-[rgb(73,100,110)]'
+							href='/'
+							>Home</a
+						>
+						<a
+							class='transition-colors hover:text-[rgb(48,110,232)] dark:hover:text-[rgb(73,100,110)]'
+							href='/post'
+							>Posts</a
+						>
 					</div>
 				</div>
 
@@ -68,15 +112,19 @@ const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow';
 						stroke-linejoin='round'
 						aria-hidden='true'
 					>
-						<circle cx='12' cy='12' r='4' />
-						<path d='M12 2v2' />
-						<path d='M12 20v2' />
-						<path d='m4.93 4.93 1.41 1.41' />
-						<path d='m17.66 17.66 1.41 1.41' />
-						<path d='M2 12h2' />
-						<path d='M20 12h2' />
-						<path d='m6.34 17.66-1.41 1.41' />
-						<path d='m19.07 4.93-1.41 1.41' />
+						<circle
+							cx='12'
+							cy='12'
+							r='4'
+						></circle>
+						<path d='M12 2v2'></path>
+						<path d='M12 20v2'></path>
+						<path d='m4.93 4.93 1.41 1.41'></path>
+						<path d='m17.66 17.66 1.41 1.41'></path>
+						<path d='M2 12h2'></path>
+						<path d='M20 12h2'></path>
+						<path d='m6.34 17.66-1.41 1.41'></path>
+						<path d='m19.07 4.93-1.41 1.41'></path>
 					</svg>
 					<svg
 						class='hidden h-4 w-4 dark:block'
@@ -88,21 +136,29 @@ const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow';
 						stroke-linejoin='round'
 						aria-hidden='true'
 					>
-						<path d='M12 3a7 7 0 1 0 9 9 9 9 0 1 1-9-9z' />
+						<path d='M12 3a7 7 0 1 0 9 9 9 9 0 1 1-9-9z'></path>
 					</svg>
 				</button>
 			</nav>
 		</div>
 
-		<slot />
+		<div class='flex-1'>
+			<slot />
+		</div>
 
-		<footer class='mt-16 border-t border-slate-200 bg-white/80 px-6 py-12 dark:border-slate-800 dark:bg-[rgb(19,22,23)]/80'>
-			<div class='mx-auto flex w-full max-w-5xl flex-col items-center justify-between gap-6 md:flex-row'>
+		<footer
+			class='mt-16 border-t border-slate-200 bg-white/80 px-6 py-12 dark:border-slate-800 dark:bg-[rgb(19,22,23)]/80'
+		>
+			<div
+				class='mx-auto flex w-full max-w-5xl flex-col items-center justify-between gap-6 md:flex-row'
+			>
 				<div class='flex flex-col items-center gap-1 md:items-start'>
 					<span class='font-serif text-lg font-bold'>{siteConfig.name}</span>
 				</div>
 
-				<div class='flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300'>
+				<div
+					class='flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300'
+				>
 					<a
 						class='transition-colors hover:text-[rgb(48,110,232)] dark:hover:text-[rgb(73,100,110)]'
 						href={siteConfig.social.linkedin}
