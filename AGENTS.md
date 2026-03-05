@@ -24,14 +24,17 @@ Project guidelines for coding agents working in this repository.
 - Base layout: `src/layouts/BaseLayout.astro`
 - Global styles: `src/global.css`
 - Content schema: `src/content.config.ts`
-- Posts: `src/content/post/*.md`
+- Posts: `src/content/post/<slug>/index.md`
+- Post images: `src/content/post/<slug>/images/*`
 - Site config (name + social links): `src/config/site.ts`
 - Typed taxonomy: `src/config/post-taxonomy.ts`
 - Reading time utility: `src/utils/reading-time.ts`
 
 ## Content Rules
 
-- Posts are Markdown files in `src/content/post/` with frontmatter.
+- Each post must live in its own folder: `src/content/post/<slug>/`.
+- The Markdown entry file for each post is `index.md`.
+- Keep post-specific images in `src/content/post/<slug>/images/`.
 - `category` and `tags` are validated by the typed lists in `src/config/post-taxonomy.ts`.
 - Do not add categories/tags directly in posts unless they already exist in taxonomy.
 - `readingTime` is automatic (word-count based). Do not add `readingTime` manually in frontmatter.

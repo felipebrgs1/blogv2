@@ -54,11 +54,16 @@ If you use a category/tag outside the list, build will fail.
 
 ## How to create a post
 
-Create a `.md` file in:
+Create a folder for the post in:
 
-- `src/content/post/`
+- `src/content/post/<slug>/`
 
-Example `src/content/post/my-first-post.md`:
+Inside it, create:
+
+- `index.md` (post content)
+- `images/` (post-specific assets)
+
+Example `src/content/post/my-first-post/index.md`:
 
 ```md
 ---
