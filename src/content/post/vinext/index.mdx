@@ -22,7 +22,7 @@ Limpei todas as caches (.next e dist) e rodei os builds em projetos equivalentes
 - Next.js gera dezenas de chunks pequenos (ótimo para cache granular e lazy loading preciso).
 - Vinext faz bundling mais agressivo (melhor tree-shaking global e parsing mais eficiente no navegador, mas invalidação de cache mais ampla em updates).
 
-<Image src={vinextBuildClient} format="webp" alt="Comparativo de build e client-side entre Next.js e Vinext" />
+<Image src={vinextBuildClient} format="webp" widths={[360, 540, 720]} sizes="(max-width: 768px) 100vw, 768px" alt="Comparativo de build e client-side entre Next.js e Vinext" />
 
 **Outros pontos que observei:**
 
@@ -30,7 +30,7 @@ Limpei todas as caches (.next e dist) e rodei os builds em projetos equivalentes
 - Compatibilidade quase total com o ecossistema Vite (exceto Next/font, Next/images e outros relacionados diretamente com a vercel).
 - HMR mais maduro e previsível em projetos maiores.
 
-<Image src={vinextBuildServer} format="webp" alt="Comparativo de chunks server-side entre Next.js e Vinext" />
+<Image src={vinextBuildServer} format="webp" widths={[360, 540, 720]} sizes="(max-width: 768px) 100vw, 768px" alt="Comparativo de chunks server-side entre Next.js e Vinext" />
 
 O Next.js continua extremamente sólido, principalmente se você já está dentro do ecossistema Vercel. O Vinext (lançado há poucos dias) ainda é experimental, mas entrega um footprint bem menor e mais liberdade de vendor lock-in.
 #NextJS #Vite #React #WebPerformance #Cloudflare #Vinext
