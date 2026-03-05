@@ -1,8 +1,8 @@
 export const siteConfig = {
 	name: "The Lab",
-	url: "https://blog-4z4.pages.dev",
+	url: "https://blog.felipebrg.com.br",
 	social: {
-		github: "https://github.com/seu-usuario",
-		linkedin: "https://www.linkedin.com/in/seu-usuario/",
+		github: "https://github.com/felipebrgs1",
+		linkedin: "https://www.linkedin.com/in/felipeborgaco/",
 	},
 } as const;
